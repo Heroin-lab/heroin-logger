@@ -1,19 +1,31 @@
 package logger
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+func getTime() string {
+	fullTime := time.Now().Format("01-02-2006 15:04:05")
+	return fullTime
+}
 
 func Info(message string, params interface{}) {
-	fmt.Println("\u001B[36mINFO:\u001B[0m", message, " params: ", params)
+	currentTime := getTime()
+	fmt.Println(currentTime, "\u001B[36m[INFO]\u001B[0m", message, " params: ", params)
 }
 
 func Error(message string, params interface{}) {
-	fmt.Println("\033[31mERROR:\u001B[0m", message, " params: ", params)
+	currentTime := getTime()
+	fmt.Println(currentTime, "\033[31m[ERROR]\u001B[0m", message, " params: ", params)
 }
 
 func Warning(message string, params interface{}) {
-	fmt.Println("\033[33mWARNING:\u001B[0m", message, " params: ", params)
+	currentTime := getTime()
+	fmt.Println(currentTime, "\033[33m[WARNING]\u001B[0m", message, " params: ", params)
 }
 
 func Fatal(message string, params interface{}) {
-	fmt.Println("\033[31mFATAL:\u001B[0m", message, " params: ", params)
+	currentTime := getTime()
+	fmt.Println(currentTime, "\033[31m[FATAL]\u001B[0m", message, " params: ", params)
 }
