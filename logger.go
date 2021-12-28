@@ -39,20 +39,20 @@ func getTime() string {
 func DebugMsg(message ...interface{}) {
 	if logLevel == "debug" {
 		currentTime := getTime()
-		fmt.Printf("\n [%s] \033[32m[DEBUG]\u001B[0m lvl=%s  msg= %s", currentTime, logLevel, message)
+		fmt.Printf("\n [%s] \033[32m[DEBUG]\u001B[0m lvl= %s  msg= %s", currentTime, logLevel, message)
 	}
 }
 
 func Info(message ...interface{}) {
 	if logLevel == "info" || logLevel == "debug" {
 		currentTime := getTime()
-		fmt.Printf("\n [%s] \u001B[36m[INFO]\u001B[0m lvl=%s  msg= %s", currentTime, logLevel, message)
+		fmt.Printf("\n [%s] \u001B[36m[INFO]\u001B[0m lvl= %s  msg= %s", currentTime, logLevel, message)
 	}
 }
 
 func Error(message ...interface{}) {
 	currentTime := getTime()
-	fmt.Printf("\n [%s] \033[31m[ERROR]\u001B[0m lvl=%s  msg= %s", currentTime, logLevel, message)
+	fmt.Printf("\n [%s] \033[31m[ERROR]\u001B[0m lvl= %s  msg= %s", currentTime, logLevel, message)
 }
 
 func Warning(message ...interface{}) {
@@ -64,6 +64,6 @@ func Warning(message ...interface{}) {
 
 func Fatal(message ...interface{}) {
 	currentTime := getTime()
-	fmt.Printf("\n [%s] \033[31m[FATAL]\u001B[0m lvl= %sa  msg= %s", currentTime, logLevel, message)
+	fmt.Printf("\n [%s] \033[31m[FATAL]\u001B[0m lvl= %s  msg= %s", currentTime, logLevel, message)
 	os.Exit(1)
 }
