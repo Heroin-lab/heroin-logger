@@ -25,7 +25,7 @@ func SetLogLevel(lvl string) error {
 		return nil
 	}
 
-	Error("Not valid log level [", lvl, "] please, set the correct level. "+
+	Fatal("Not valid log level [", lvl, "] please, set the correct level. "+
 		"\nAvalible levels: \n 'info' \n 'debug' \n 'warning \n 'error'")
 
 	return fmt.Errorf("Not valid log level %d", lvl)
