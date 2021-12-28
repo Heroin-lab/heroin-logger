@@ -2,6 +2,7 @@ package logger
 
 import (
 	"fmt"
+	"os"
 	"strings"
 	"time"
 )
@@ -64,4 +65,5 @@ func Warning(message ...interface{}) {
 func Fatal(message ...interface{}) {
 	currentTime := getTime()
 	fmt.Printf("\n [%s] \033[31m[FATAL]\u001B[0m lvl= %sa  msg= %s", currentTime, logLevel, message)
+	os.Exit(1)
 }
