@@ -1,3 +1,3 @@
-module github.com/Heroin-lab/heroin-logger/v2
+module github.com/Heroin-lab/heroin-logger/v3
 
 go 1.13
